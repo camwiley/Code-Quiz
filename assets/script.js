@@ -16,7 +16,7 @@ let questionEl = document.querySelector("#question");
 // how many questions they have answered
 let questionCount = 0;
 // div yaynay
-const yaynayEl = document.querySelector("#yaynay");
+const rightWrongEl = document.querySelector("#right-wrong");
 
 // section final
 const finalEl = document.querySelector("#final");
@@ -44,7 +44,7 @@ const ans3Btn = document.querySelector("#answer3");
 // answer4
 const ans4Btn = document.querySelector("#answer4");
 // submit-score
-const submitScrBtn = document.querySelector("#submit-score");
+const submitBtn = document.querySelector("#submit-score");
 // goback
 const goBackBtn = document.querySelector("#goback");
 // clearscores
@@ -130,7 +130,7 @@ function checkAnswer(event) {
     event.preventDefault();
 
     // show section for yaynay and append message
-    yaynayEl.style.display = "block";
+    rightWrongEl.style.display = "block";
     let p = document.createElement("p");
     yaynayEl.appendChild(p);
 
@@ -200,13 +200,12 @@ function displayScores() {
     }
 }
 
-// clear scores
+// Clear scores
 function clearScores() {
     localStorage.clear();
     scoreListEl.innerHTML="";
 }
 
-// EventListeners
 // Start timer and display first question when click start quiz
 startBtn.addEventListener("click", startQuiz);
 
@@ -216,7 +215,7 @@ ansBtn.forEach(item => {
 });
 
 // Add score
-submitScrBtn.addEventListener("click", addScore);
+submitBtn.addEventListener("click", addScore);
 
 // Go Back Button
 goBackBtn.addEventListener("click", function () {
